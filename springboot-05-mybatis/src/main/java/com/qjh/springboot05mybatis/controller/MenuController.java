@@ -23,7 +23,7 @@ public class MenuController {
     MenuMapper menuMapper;
 
 
-//    获取所有menu
+//    获取所有menu,用来写导航栏的
     @RequestMapping("/menus")
     public String getAllMenus(){
         HashMap<String,Object> data=new HashMap<>();

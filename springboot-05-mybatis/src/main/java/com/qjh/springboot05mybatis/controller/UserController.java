@@ -21,6 +21,8 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
+
+
 //    @GetMapping("/query")
 //    public List<ComUser> queryUserList(){
 //        List<ComUser> userList = userMapper.queryUserList();
@@ -47,14 +49,17 @@ public class UserController {
         return i>0?"success":"error";
     }
 
-//    这里只需要添加
+//    添加用户的时候，还需调用PersonController里的add接口，向person表里添加此用户对应的数据
+//    username字段为user的username，其他字段可使用默认空值
     @RequestMapping("/addUser")
     public String addUser(@RequestBody User user){
         user.setRole("普通用户");
         int i = userMapper.addUser(user);
+
         return i > 0?"success":"error";
     }
 
+//删除用户同样调用person的删除接口
     @RequestMapping("deleteUser")
     public String deleteUser(int id){
         int i= userMapper.deleteUser(id);
