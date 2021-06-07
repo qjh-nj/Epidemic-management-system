@@ -22,5 +22,6 @@ public class Person {
     private String address;
     private String phone;
     private String health;
+    private String sfzh;//身份证号
 
 }
