@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description: TODO
+ * @Description: 个人信息模块
  * @author: QJH
  * @date: 2021/6/7  10:16
  */

@@ -12,7 +12,7 @@
         <if test="username !=null ">
             WHERE username like #{username}
         </if>
-        limit #{pageStart},#{pagesize}
+        limit #{pageStart},#{pageSize}
     </select>
 
     <select id="getUserCounts" resultType="_int">
