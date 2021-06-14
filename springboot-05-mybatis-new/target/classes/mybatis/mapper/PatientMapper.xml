@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qjh.springboot05mybatis.mapper.PatientMapper">
+
+    <select id="getAllSick" resultType="Person">
+        select * from person
+        <if test="name !=null ">
+            WHERE name like #{name} and health='sick'
+        </if>
+        limit #{pageStart},#{pageSize}
+    </select>
+
+    <select id="getAllDead" resultType="Person">
+        select * from person
+        <if test="name !=null ">
+            WHERE name like #{name} and health='dead'
+        </if>
+        limit #{pageStart},#{pageSize}
+    </select>
+
+    <select id="getAllCuel" resultType="Person">
+        select * from person
+        <if test="name !=null ">
+            WHERE name like #{name} and health='cuel'
+        </if>
+        limit #{pageStart},#{pageSize}
+    </select>
+
+    <select id="getSickCounts" resultType="_int">
+        select count(*) from person
+        <if test="name !=null ">
+            WHERE name like #{name} and health='sick'
+        </if>
+    </select>
+
+    <select id="getDeadCounts" resultType="_int">
+        select count(*) from person
+        <if test="name !=null ">
+            WHERE name like #{name} and health='dead'
+        </if>
+    </select>
+
+    <select id="getCuelCounts" resultType="_int">
+        select count(*) from person
+        <if test="name !=null ">
+            WHERE name like #{name} and health='cuel'
+        </if>
+    </select>
+
+</mapper>

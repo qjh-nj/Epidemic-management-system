@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qjh.springboot05mybatis.mapper.PersonMapper">
+    <select id="getPersonByMessage" resultType="Person">
+        select * from person where username=#{username}
+    </select>
+
+    <insert id="addPerson">
+        INSERT INTO person
+            (username,name, gender,email, address, phone,health,sfzh)
+            VALUE
+            (#{username},#{name},#{gender},#{email},#{address},#{phone},#{health},#{sfzh})
+    </insert>
+
+    <delete id="deletePerson" >
+        delete from person where username=#{username}
+    </delete>
+
+    <select id="getUpdatePerson" resultType="Person">
+        select * from person where username=#{username}
+    </select>
+
+    <update id="editPerson">
+        update person set username=#{username},name=#{name},gender=#{gender},email=#{email},address=#{address},phone=#{phone},health=#{health} ,sfzh=#{sfzh} where username=#{username}
+    </update>
+</mapper>
